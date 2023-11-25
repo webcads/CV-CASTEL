@@ -1,595 +1,248 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum Vitae</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1f2227;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<html lang="en">
 
-        main {
-            width: 21cm;
-            height: 29.7cm;
-            background-color: #1f2227;
-            padding: 5.6vw;
-            display: flex;
-        }
-
-        /* Estilos para la primera columna */
-        .column1 {
-            flex: 1;
-            padding: 20px;
-            color: white;
-        }
-
-        .experiences {
-            font-weight: bold;
-            color: #e9eef7;
-        }
-
-        .company-name {
-            margin-top: 10px;
-            color: #354862;
-        }
-
-        .role {
-            font-style: italic;
-            font-size: smaller;
-            color: #e9eef7;
-        }
-
-        .date {
-            font-size: x-small;
-            color: #e9eef7;
-        }
-
-        /* Estilos para la segunda columna */
-        .column2 {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3a48;
-            color: white;
-        }
-
-        .hexagon {
-            width: 100px;
-            height: 115px;
-            background-color: #fff;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            margin: 0 auto;
-        }
-
-        .name {
-            font-size: larger;
-            margin-top: 10px;
-            color: #e9eef7;
-        }
-
-        .profession {
-            font-size: smaller;
-            color: #e9eef7;
-        }
-
-        .intro {
-            margin-top: 20px;
-            color: #e9eef7;
-        }
-
-        hr {
-            border: 1px dashed white;
-        }
-
-        /* Estilos para la tercera columna */
-        .column3 {
-            flex: 1;
-            padding: 20px;
-            color: white;
-        }
-
-        .education {
-            font-weight: bold;
-            color: #e9eef7;
-        }
-
-        .institution-name {
-            margin-top: 10px;
-            color: #354862;
-        }
-
-        .degree {
-            font-style: italic;
-            font-size: smaller;
-            color: #e9eef7;
-        }
-
-        .years {
-            font-size: x-small;
-            color: #e9eef7;
-        }
-
-        .description {
-            font-size: small;
-            color: #e9eef7;
-        }
-
-        /* Estilos para habilidades */
-        .skills {
-            margin-top: 20px;
-            color: #e9eef7;
-        }
-
-        .skill-label {
-            font-weight: bold;
-            color: #e9eef7;
-        }
-
-        .skill-checkbox {
-            width: 12px;
-            height: 12px;
-            border: 1px solid #000;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 5px;
-            background-color: #545a73;
-        }
-
-        /* Estilos para los iconos de redes sociales */
-        .social-icons {
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-    </style>
-<style id="mttstyle">
-    #mttContainer {
-      left: 0 !important;
-      top: 0 !important;
-      width: 1000px !important;
-      margin-left: -500px !important;
-      position: fixed !important;
-      z-index: 100000200 !important;
-      background: none !important;
-      pointer-events: none !important;
-      display: inline-block !important;
-    }
-    .bootstrapiso .tooltip {
-      width:auto  !important;
-      height:auto  !important;
-      background: none !important;
-      border:none !important;
-      border-radius: 0px !important;
-      visibility: visible  !important;
-      pointer-events: none !important;
-    }
-    .bootstrapiso  .bs-tooltip-top { 
-      margin-bottom: 15px  !important;
-    }
-    .bootstrapiso  .bs-tooltip-bottom { 
-      margin-top: 15px  !important;
-    }
-    .bootstrapiso .tooltip-inner {
-      font-size: 14px  !important;
-      max-width: 200px  !important;
-      text-align: center !important;
-      backdrop-filter: blur(2px) !important; 
-      background-color: #000000b8 !important;
-      color: #ffffffff !important;
-      pointer-events: auto;
-    }
-    .bootstrapiso .arrow::before {
-      border-top-color: #000000b8 !important;
-    }
-    .bootstrapiso .arrow {
-      font-size: 14px  !important;
-      margin: auto  !important;
-    }
-    .bootstrapiso .arrow::after {
-      display:none !important;
-    }
-    .ocr_text_div{
-      position: absolute;
-      opacity: 0.7;
-      font-size: calc(100% + 1cqw);
-      overflow: hidden;
-      border: 2px solid CornflowerBlue;
-      color: transparent !important;
-      background: none !important;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum Vitae</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1f2227;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    </style><style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}</style><style id="mttstyle">
-    #mttContainer {
-      left: 0 !important;
-      top: 0 !important;
-      width: 1000px !important;
-      margin-left: -500px !important;
-      position: fixed !important;
-      z-index: 100000200 !important;
-      background: none !important;
-      pointer-events: none !important;
-      display: inline-block !important;
-    }
-    .bootstrapiso .tooltip {
-      width:auto  !important;
-      height:auto  !important;
-      background: none !important;
-      border:none !important;
-      border-radius: 0px !important;
-      visibility: visible  !important;
-      pointer-events: none !important;
-    }
-    .bootstrapiso  .bs-tooltip-top { 
-      margin-bottom: 15px  !important;
-    }
-    .bootstrapiso  .bs-tooltip-bottom { 
-      margin-top: 15px  !important;
-    }
-    .bootstrapiso .tooltip-inner {
-      font-size: 14px  !important;
-      max-width: 200px  !important;
-      text-align: center !important;
-      backdrop-filter: blur(2px) !important; 
-      background-color: #000000b8 !important;
-      color: #ffffffff !important;
-      pointer-events: auto;
-    }
-    .bootstrapiso .arrow::before {
-      border-top-color: #000000b8 !important;
-    }
-    .bootstrapiso .arrow {
-      font-size: 14px  !important;
-      margin: auto  !important;
-    }
-    .bootstrapiso .arrow::after {
-      display:none !important;
-    }
-    .ocr_text_div{
-      position: absolute;
-      opacity: 0.7;
-      font-size: calc(100% + 1cqw);
-      overflow: hidden;
-      border: 2px solid CornflowerBlue;
-      color: transparent !important;
-      background: none !important;
+    main {
+      width: 21cm;
+      height: 29.7cm;
+      background-color: #1f2227;
+      padding: 5.6vw;
+      display: flex;
     }
 
-    </style><style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}</style><style id="mttstyle">
-    #mttContainer {
-      left: 0 !important;
-      top: 0 !important;
-      width: 1000px !important;
-      margin-left: -500px !important;
-      position: fixed !important;
-      z-index: 100000200 !important;
-      background: none !important;
-      pointer-events: none !important;
-      display: inline-block !important;
-    }
-    .bootstrapiso .tooltip {
-      width:auto  !important;
-      height:auto  !important;
-      background: none !important;
-      border:none !important;
-      border-radius: 0px !important;
-      visibility: visible  !important;
-      pointer-events: none !important;
-    }
-    .bootstrapiso  .bs-tooltip-top { 
-      margin-bottom: 15px  !important;
-    }
-    .bootstrapiso  .bs-tooltip-bottom { 
-      margin-top: 15px  !important;
-    }
-    .bootstrapiso .tooltip-inner {
-      font-size: 14px  !important;
-      max-width: 200px  !important;
-      text-align: center !important;
-      backdrop-filter: blur(2px) !important; 
-      background-color: #000000b8 !important;
-      color: #ffffffff !important;
-      pointer-events: auto;
-    }
-    .bootstrapiso .arrow::before {
-      border-top-color: #000000b8 !important;
-    }
-    .bootstrapiso .arrow {
-      font-size: 14px  !important;
-      margin: auto  !important;
-    }
-    .bootstrapiso .arrow::after {
-      display:none !important;
-    }
-    .ocr_text_div{
-      position: absolute;
-      opacity: 0.7;
-      font-size: calc(100% + 1cqw);
-      overflow: hidden;
-      border: 2px solid CornflowerBlue;
-      color: transparent !important;
-      background: none !important;
+    /* Estilos para la primera columna */
+    .column1 {
+      flex: 1;
+      padding: 20px;
+      color: white;
     }
 
-    </style><style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}</style><style id="mttstyle">
-    #mttContainer {
-      left: 0 !important;
-      top: 0 !important;
-      width: 1000px !important;
-      margin-left: -500px !important;
-      position: fixed !important;
-      z-index: 100000200 !important;
-      background: none !important;
-      pointer-events: none !important;
-      display: inline-block !important;
-    }
-    .bootstrapiso .tooltip {
-      width:auto  !important;
-      height:auto  !important;
-      background: none !important;
-      border:none !important;
-      border-radius: 0px !important;
-      visibility: visible  !important;
-      pointer-events: none !important;
-    }
-    .bootstrapiso  .bs-tooltip-top { 
-      margin-bottom: 15px  !important;
-    }
-    .bootstrapiso  .bs-tooltip-bottom { 
-      margin-top: 15px  !important;
-    }
-    .bootstrapiso .tooltip-inner {
-      font-size: 14px  !important;
-      max-width: 200px  !important;
-      text-align: center !important;
-      backdrop-filter: blur(2px) !important; 
-      background-color: #000000b8 !important;
-      color: #ffffffff !important;
-      pointer-events: auto;
-    }
-    .bootstrapiso .arrow::before {
-      border-top-color: #000000b8 !important;
-    }
-    .bootstrapiso .arrow {
-      font-size: 14px  !important;
-      margin: auto  !important;
-    }
-    .bootstrapiso .arrow::after {
-      display:none !important;
-    }
-    .ocr_text_div{
-      position: absolute;
-      opacity: 0.7;
-      font-size: calc(100% + 1cqw);
-      overflow: hidden;
-      border: 2px solid CornflowerBlue;
-      color: transparent !important;
-      background: none !important;
+    .experiences {
+      font-weight: bold;
+      color: #e9eef7;
     }
 
-    </style><style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: circular;
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}</style><style id="mttstyle">
-    #mttContainer {
-      left: 0 !important;
-      top: 0 !important;
-      width: 1000px !important;
-      margin-left: -500px !important;
-      position: fixed !important;
-      z-index: 100000200 !important;
-      background: none !important;
-      pointer-events: none !important;
-      display: inline-block !important;
-    }
-    .bootstrapiso .tooltip {
-      width:auto  !important;
-      height:auto  !important;
-      background: none !important;
-      border:none !important;
-      border-radius: 0px !important;
-      visibility: visible  !important;
-      pointer-events: none !important;
-    }
-    .bootstrapiso  .bs-tooltip-top { 
-      margin-bottom: 15px  !important;
-    }
-    .bootstrapiso  .bs-tooltip-bottom { 
-      margin-top: 15px  !important;
-    }
-    .bootstrapiso .tooltip-inner {
-      font-size: 14px  !important;
-      max-width: 200px  !important;
-      text-align: center !important;
-      backdrop-filter: blur(2px) !important; 
-      background-color: #000000b8 !important;
-      color: #ffffffff !important;
-      pointer-events: auto;
-    }
-    .bootstrapiso .arrow::before {
-      border-top-color: #000000b8 !important;
-    }
-    .bootstrapiso .arrow {
-      font-size: 14px  !important;
-      margin: auto  !important;
-    }
-    .bootstrapiso .arrow::after {
-      display:none !important;
-    }
-    .ocr_text_div{
-      position: absolute;
-      opacity: 0.7;
-      font-size: calc(100% + 1cqw);
-      overflow: hidden;
-      border: 2px solid CornflowerBlue;
-      color: transparent !important;
-      background: none !important;
+    .company-name {
+      margin-top: 10px;
+      color: #354862;
     }
 
-    </style><style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: circular;
+    .role {
+      font-style: italic;
+      font-size: smaller;
+      color: #e9eef7;
+    }
 
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
+    .date {
+      font-size: x-small;
+      color: #e9eef7;
+    }
 
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: circular;
+    /* Estilos para la segunda columna */
+    .column2 {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3a48;
+      color: white;
+    }
 
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}</style></head>
+    .hexagon {
+      width: 100px;
+      height: 115px;
+      background-color: #fff;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      margin: 0 auto;
+    }
+
+    .name {
+      font-size: larger;
+      margin-top: 10px;
+      color: #e9eef7;
+    }
+
+    .profession {
+      font-size: smaller;
+      color: #e9eef7;
+    }
+
+    .intro {
+      margin-top: 20px;
+      color: #e9eef7;
+    }
+
+    hr {
+      border: 1px dashed white;
+    }
+
+    /* Estilos para la tercera columna */
+    .column3 {
+      flex: 1;
+      padding: 20px;
+      color: white;
+    }
+
+    .education {
+      font-weight: bold;
+      color: #e9eef7;
+    }
+
+    .institution-name {
+      margin-top: 10px;
+      color: #354862;
+    }
+
+    .degree {
+      font-style: italic;
+      font-size: smaller;
+      color: #e9eef7;
+    }
+
+    .years {
+      font-size: x-small;
+      color: #e9eef7;
+    }
+
+    .description {
+      font-size: small;
+      color: #e9eef7;
+    }
+
+    /* Estilos para habilidades */
+    .skills {
+      margin-top: 20px;
+      color: #e9eef7;
+    }
+
+    .skill-label {
+      font-weight: bold;
+      color: #e9eef7;
+    }
+
+    .skill-checkbox {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      background-color: #545a73;
+    }
+
+    /* Estilos para los iconos de redes sociales */
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
 <body style="
     margin: 1vw;
     background: white;
 ">
-    <main>
-        <!-- Primera columna -->
-        <div class="column1">
-            <div class="experiences" style="
+  <main>
+    <!-- Primera columna -->
+    <div class="column1">
+      <div class="experiences" style="
     text-transform: uppercase;
 ">Experiencias:</div>
-            <div class="company">
-                <div class="company-name">Nombre de la Empresa 1</div>
-                <div class="role">Rol en la Empresa 1</div>
-                <div class="date">Fecha enero - junio</div>
-            </div>
-            <!-- Agregar más empresas aquí -->
+      <div class="company">
+        <div class="company-name">Nombre de la Empresa 1</div>
+        <div class="role">Rol en la Empresa 1</div>
+        <div class="date">Fecha enero - junio</div>
+      </div>
+      <!-- Agregar más empresas aquí -->
 
-            <div class="experiences">SOFTWARE:</div>
-            <div class="software">
-                <div class="skill-label">Software 1:</div>
-                <div class="skill-checkbox"></div><div class="skill-checkbox"></div><div class="skill-checkbox"></div>
-                <div class="skill-checkbox"></div><div class="skill-checkbox"></div><div class="skill-checkbox"></div>
-                <!-- Repetir para otros software -->
-            </div>
+      <div class="experiences">SOFTWARE:</div>
+      <div class="software">
+        <div class="skill-label">Software 1:</div>
+        <div class="skill-checkbox"></div>
+        <div class="skill-checkbox"></div>
+        <div class="skill-checkbox"></div>
+        <div class="skill-checkbox"></div>
+        <div class="skill-checkbox"></div>
+        <div class="skill-checkbox"></div>
+        <!-- Repetir para otros software -->
+      </div>
+    </div>
+
+    <!-- Segunda columna -->
+    <div class="column2">
+      <div class="hexagon"></div>
+      <div class="name">IVAN ESTEBAN CASTILLO</div>
+      <div class="profession">Fullstack Developer</div>
+      <div class="intro">
+        Este es un párrafo de presentación. Puedes personalizarlo con tu propia descripción.
+      </div>
+      <hr>
+      <div class="contacts">
+        <div class="contact-label">Contactos:</div>
+        <div class="contact-info">Correo: ejemplo@gmail.com</div>
+        <div class="contact-info">Fecha de Nacimiento: 01/01/1990</div>
+        <div class="contact-info">Teléfono: (123) 456-7890</div>
+        <div class="contact-info">Website: www.ejemplo.com</div>
+        <div class="contact-info">Linkedin: www.linkedin.com/in/ejemplo</div>
+        <div class="contact-info">Zodíaco: Capricornio</div>
+      </div>
+      <hr>
+      <div class="social-icons">
+        <div class="social-icon">
+          <img src="instagram-icon.png" alt="Instagram">
+          <div>@castelll0009</div>
         </div>
+        <!-- Agregar más redes sociales aquí -->
+      </div>
+    </div>
 
-        <!-- Segunda columna -->
-        <div class="column2">
-            <div class="hexagon"></div>
-            <div class="name">IVAN ESTEBAN CASTILLO</div>
-            <div class="profession">Fullstack Developer</div>
-            <div class="intro">
-                Este es un párrafo de presentación. Puedes personalizarlo con tu propia descripción.
-            </div>
-            <hr>
-            <div class="contacts">
-                <div class="contact-label">Contactos:</div>
-                <div class="contact-info">Correo: ejemplo@gmail.com</div>
-                <div class="contact-info">Fecha de Nacimiento: 01/01/1990</div>
-                <div class="contact-info">Teléfono: (123) 456-7890</div>
-                <div class="contact-info">Website: www.ejemplo.com</div>
-                <div class="contact-info">Linkedin: www.linkedin.com/in/ejemplo</div>
-                <div class="contact-info">Zodíaco: Capricornio</div>
-            </div>
-            <hr>
-            <div class="social-icons">
-                <div class="social-icon">
-                    <img src="instagram-icon.png" alt="Instagram">
-                    <div>@castelll0009</div>
-                </div>
-                <!-- Agregar más redes sociales aquí -->
-            </div>
-        </div>
-
-        <!-- Tercera columna -->
-        <div class="column3">
-            <div class="education" style="
+    <!-- Tercera columna -->
+    <div class="column3">
+      <div class="education" style="
     text-transform: uppercase;
 ">Educación:</div>
-            <div class="institution">
-                <div class="institution-name">Unicauca</div>
-                <div class="degree">Ingeniería de Sistemas</div>
-                <div class="years">2021-2023 semestre 4 promedio 4.5</div>
-                <div class="description">Breve descripción de la carrera.</div>
-            </div>
-            <!-- Agregar más instituciones aquí -->
+      <div class="institution">
+        <div class="institution-name">Unicauca</div>
+        <div class="degree">Ingeniería de Sistemas</div>
+        <div class="years">2021-2023 semestre 4 promedio 4.5</div>
+        <div class="description">Breve descripción de la carrera.</div>
+      </div>
+      <!-- Agregar más instituciones aquí -->
 
-            <div class="skills">
-                <div class="skill-label">SKILLS:</div>
-                <div class="skill-checkbox"></div> Programación en REACT
-                <br>
-                <div class="skill-checkbox"></div> HTML
-                <br>
-                <div class="skill-checkbox"></div> CSS
-                <br>
-                <div class="skill-checkbox"></div> JS
-                <br>
-                <div class="skill-checkbox"></div> Frontend
-                <br>
-                <div class="skill-checkbox"></div> Backend
-                <br>
-                <!-- Agregar más habilidades aquí -->
-            </div>
-        </div>
-    </main>
-</body></html>
+      <div class="skills">
+        <div class="skill-label">SKILLS:</div>
+        <div class="skill-checkbox"></div> Programación en REACT
+        <br>
+        <div class="skill-checkbox"></div> HTML
+        <br>
+        <div class="skill-checkbox"></div> CSS
+        <br>
+        <div class="skill-checkbox"></div> JS
+        <br>
+        <div class="skill-checkbox"></div> Frontend
+        <br>
+        <div class="skill-checkbox"></div> Backend
+        <br>
+        <!-- Agregar más habilidades aquí -->
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
