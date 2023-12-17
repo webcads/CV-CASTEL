@@ -3,11 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import CardCont from "../components/CardCont.astro";
 import DayNight from "../components/CAD/DayNight.astro"
+import { Image } from "astro:assets";
+import pathImageProfil  from "../imgs/castell.jpg"
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<!-- <DayNight></DayNight> -->
 	<main class="flex flex-row">
+		
 		<!-- Primera columna -->
 		<div class="col column1 flex-1">
 			<!-- section experiences -->
@@ -17,6 +21,7 @@ import DayNight from "../components/CAD/DayNight.astro"
 				>
 					Experiences
 				</h2>
+				
 				<div class="card-content">
 					<ul role="list" class="link-card-grid">
 						<CardCont
@@ -58,6 +63,7 @@ import DayNight from "../components/CAD/DayNight.astro"
 				>
 					Software
 				</h2>
+				
 				<div class="card-content">
 					<ul role="list" class="link-card-grid">
 						<div class="company">
@@ -85,15 +91,18 @@ import DayNight from "../components/CAD/DayNight.astro"
 				</div>
 			</div>
 		</div>
-
+	
 		<!-- Segunda columna -->
 		<div class="col column2">
-			<div class="hexagon"></div>
+			<div class="hexagon">
+				<Image src={pathImageProfil} width={300} height={300} alt="Person's Picture"></Image>				
+			</div>
+	
 			<h1 class="text-4xl">IVAN CASTILLO</h1>
 			<div class="profession">Fullstack Developer</div>
 			<div class="intro">
-				
-Dedicated to excellence, I lead colleagues in integrating innovation for continuous improvement. Tackling challenges with determination, I leverage emerging technologies for streamlined processes. My commitment to health, sports, and humor complements a passion for exceeding expectations and fostering a culture of continuous learning.
+						
+		Dedicated to excellence, I lead colleagues in integrating innovation for continuous improvement. Tackling challenges with determination, I leverage emerging technologies for streamlined processes. My commitment to health, sports, and humor complements a passion for exceeding expectations and fostering a culture of continuous learning.
 			</div>
 			<hr />
 			<div class="contacts">
@@ -257,9 +266,10 @@ Dedicated to excellence, I lead colleagues in integrating innovation for continu
 	}
 
 	.hexagon {
+		background: #fff;		
 		width: 100px;
 		height: 115px;
-		background-color: #fff;
+	
 		clip-path: polygon(
 			50% 0%,
 			100% 25%,
