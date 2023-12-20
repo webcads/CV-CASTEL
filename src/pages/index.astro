@@ -91,7 +91,7 @@ import pathImageProfil  from "../imgs/castell.jpg"
 		</div>
 	
 		<!-- Segunda columna -->
-		<div class="col column2">
+		<div class="col column2 overflow-hidden">
 			<div class="hexagon">
 				<Image src={pathImageProfil} width={300} height={300} alt="Person's Picture"></Image>				
 			</div>
@@ -99,28 +99,48 @@ import pathImageProfil  from "../imgs/castell.jpg"
 			<h1 class="text-4xl">IVAN CASTILLO</h1>
 			<div class="italic profession">Fullstack Developer</div>
 			<div class="italic profession">English Speaker</div>
-			<p class="intro text-xs " style="line-height:1.2rem">
+			<p class="text-xs pt-5 pb-5 " style="line-height:1.2rem">
 						
 		Dedicated to excellence, I lead colleagues in integrating innovation for continuous improvement. Tackling challenges with determination, I leverage emerging technologies for streamlined processes. My commitment to health, sports, and humor complements a passion for exceeding expectations and fostering a culture of continuous learning.
 			</p>
 			<hr />
-			<div class="contacts">
-				<div class="contact-label">Contactos:</div>
-				<div class="contact-info">Correo: ejemplo@gmail.com</div>
-				<div class="contact-info">Fecha de Nacimiento: 01/01/1990</div>
-				<div class="contact-info">Teléfono: (123) 456-7890</div>
-				<div class="contact-info">Website: www.ejemplo.com</div>
-				<div class="contact-info">
-					Linkedin: www.linkedin.com/in/ejemplo
-				</div>
-				<div class="contact-info">Zodíaco: Capricornio</div>
+			<!-- Middle col- 2nd  Contacts Info  -->
+			<div class="contacts pt-6 pb-6 uppercase">
+				<!-- <div class="contact-label">More Info</div> -->
+				<h5 class="pt-3 text-matte-blue " style="font-weight: 600">DOB:</h5>
+				<p>08/01/199</p>
+				<h5 class="pt-3 text-matte-blue " style="font-weight: 600">PHONE:</h5>
+				<p>3202486769</p>
+				<h5 class="pt-3 text-matte-blue " style="font-weight: 600">EMAIL:</h5>
+				<p class="normal-case">castell@unicauca.edu.co</p>
+				<h5 class="pt-3 text-matte-blue " style="font-weight: 600">Briefcase:</h5>		
+				<a  class="normal-case" href="https://castelll0009.github.io/Portafolio-s-CASTELL/" >Click to see portafolio!</a>						
+				<h5 class="pt-3 text-matte-blue " style="font-weight: 600">Linkedin:</h5>
+				<a  class="normal-case" href="#">Click to see CASTELL's Linkedin</a>
+				<a href="#"></a>
+				<!-- <h5 class="pt-3 " style="font-weight: 600">Zodiac sign:</h5>
+				<p class="normal-case">Capricorn</p> -->
 			</div>
 			<hr />
-			<div class="social-icons">
-				<div class="social-icon">
-					<img src="instagram-icon.png" alt="Instagram" />
-					<div>@castelll0009</div>
-				</div>
+			<div class="social-icons pt-5 pb-5 grid-cols-2">
+				
+					<span class="social-icon">
+						<img src="instagram-icon.png" alt="Instagram" />
+						<p class="text-xs">@castelll0009</p>
+					</span>
+					<span>
+						<img src="instagram-icon.png" alt="Instagram" />
+						<p class="text-xs">@castelll0009</p>
+					</span>
+					<span>
+						<img src="instagram-icon.png" alt="Instagram" />
+						<p class="text-xs">@castelll0009</p>
+					</span>
+					<span>
+						<img src="instagram-icon.png" alt="Instagram" />
+						<p class="text-xs">@castelll0009</p>
+					</span>
+				
 				<!-- Agregar más redes sociales aquí -->
 			</div>
 		</div>
@@ -360,11 +380,10 @@ import pathImageProfil  from "../imgs/castell.jpg"
 
 	/* Estilos para los iconos de redes sociales */
 	.social-icons {
-		margin-top: 20px;
+		/* margin-top: 20px; */
 	}
 
-	.social-icon {
-		display: inline-block;
+	.social-icon {		
 		margin-right: 10px;
 	}
 
