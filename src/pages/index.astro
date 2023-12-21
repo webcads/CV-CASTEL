@@ -5,6 +5,11 @@ import CardCont from "../components/CardCont.astro";
 import DayNight from "../components/CAD/DayNight.astro"
 import { Image } from "astro:assets";
 import pathImageProfil  from "../imgs/castell.jpg"
+import { Icon } from 'astro-icon'
+import IconInstagram from '../components/icons/instagram.astro'
+import IconThreads from '../components/icons/threads.astro'
+import IconFacebook from '../components/icons/facebook.astro'
+import IconLinkedin from '../components/icons/linkedin.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -122,27 +127,30 @@ import pathImageProfil  from "../imgs/castell.jpg"
 				<p class="normal-case">Capricorn</p> -->
 			</div>
 			<hr />
-			<div class="social-icons pt-5 pb-5 grid-cols-2">
-				
-					<span class="social-icon">
-						<img src="instagram-icon.png" alt="Instagram" />
-						<p class="text-xs">@castelll0009</p>
-					</span>
-					<span>
-						<img src="instagram-icon.png" alt="Instagram" />
-						<p class="text-xs">@castelll0009</p>
-					</span>
-					<span>
-						<img src="instagram-icon.png" alt="Instagram" />
-						<p class="text-xs">@castelll0009</p>
-					</span>
-					<span>
-						<img src="instagram-icon.png" alt="Instagram" />
-						<p class="text-xs">@castelll0009</p>
-					</span>
-				
+			<div class="social-icons pt-5 pb-5 flex align-middle" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; ">
+				<span class="social-icon flex flex-col " style="align-items:center;" >
+					<!-- <img src="instagram-icon.png" alt="Instagram" /> -->
+					<IconInstagram></IconInstagram>
+					<p class="text-xs">@castelll0009</p>
+				</span>
+				<span class="social-icon flex flex-col " style="align-items:center;" >
+					<!-- <img src="instagram-icon.png" alt="Linkedin" /> -->
+					<IconLinkedin ></IconLinkedin>
+					<p class="text-xs">@castelll0009</p>
+				</span>
+				<span class="social-icon flex flex-col " style="align-items:center;" >
+					<!-- <img src="instagram-icon.png" alt="Threads" /> -->
+					<IconThreads></IconThreads>
+					<p class="text-xs">@castelll0009</p>
+				</span>
+				<span class="social-icon flex flex-col " style="align-items:center;" >
+					<!-- <img src="instagram-icon.png" alt="Facebook" /> -->
+				<IconFacebook></IconFacebook>
+					<p class="text-xs">@castelll0009</p>
+				</span>
 				<!-- Agregar más redes sociales aquí -->
 			</div>
+			
 		</div>
 
 		<!-- Tercera columna -->
