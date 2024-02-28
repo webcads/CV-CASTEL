@@ -202,7 +202,11 @@ import IconLinkedin from '../components/icons/linkedin.astro'
 <Layout title="Welcome to Astro.">
 	<!-- <DayNight></DayNight> -->
 	<main class="flex flex-row">
-		
+		<button class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="exportToPDF()">
+			Descargar PDF
+		  </button>
+		  
+
 		<!-- Primera columna -->
 		<div class="col column1 flex-1">
 			<!-- section experiences -->
@@ -230,7 +234,7 @@ import IconLinkedin from '../components/icons/linkedin.astro'
 							body="As a Frontend Developer at Unknown.aio's NFT platform, I crafted an engaging landing page, applied creative design, and gained insights into NFT technology."
 						/>
 						<CardCont
-							href="https://www.youtube.com/watch?v=dqMnpI9PzKo&ab_channel=IVANESTEBANCASTILLOSAMBONI"
+							href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
 							title="YMCA Summer Camp, New York, USA"
 							position="Camp Counselor"
 							date="June 18 - Sept 18 2023"
@@ -568,3 +572,45 @@ function updateHiddenCheckbox() {
 }
 
 </script>
+
+<!-- download  like pdf -->
+<script is:inline>
+    async function exportToPDF() {
+        const mainContent = document.querySelector('main');
+
+        // Espera a que las imágenes se carguen completamente antes de convertir a PDF
+        await waitForImagesToLoad(mainContent);
+
+        // Configuración de html2pdf
+        const pdfOptions = {
+            margin: 0,
+            filename: 'Systems Engineer- Ivan Esteban Castillo',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 1 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Convierte el contenido a PDF
+        html2pdf().from(mainContent).set(pdfOptions).save();
+    }
+
+    async function waitForImagesToLoad(container) {
+        const images = container.querySelectorAll('img');
+        const imageLoadPromises = [];
+
+        images.forEach((image) => {
+            const imageLoadPromise = new Promise((resolve) => {
+                if (image.complete) {
+                    resolve();
+                } else {
+                    image.onload = resolve;
+                }
+            });
+
+            imageLoadPromises.push(imageLoadPromise);
+        });
+
+        await Promise.all(imageLoadPromises);
+    }
+</script>
+
