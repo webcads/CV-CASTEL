@@ -28,7 +28,9 @@ import IconLinkedin from '../components/icons/linkedin.astro'
 
 	main {
 		width: 21cm;
-		height: 29.7cm;
+		height: max-content;
+		min-height: 29.7cm;
+		max-height: max-content;
 		background-color: #1f2227;
 		padding: 2.6vw;
 		padding: 0.5vw;
@@ -205,6 +207,8 @@ import IconLinkedin from '../components/icons/linkedin.astro'
 		<button class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="exportToPDF()">
 			Descargar PDF
 		  </button>
+		  
+
 		  
 
 		<!-- Primera columna -->
@@ -443,7 +447,7 @@ import IconLinkedin from '../components/icons/linkedin.astro'
 							body="Four certifications: Google Cloud Platform, Cisco CCNA, ITIL Fundamentals to achieve fluent English. TAD HACK certificate (2nd place in local competence)."
 						/>
 						<CardCont
-						href="https://www.youtube.com/watch?v=dqMnpI9PzKo&ab_channel=IVANESTEBANCASTILLOSAMBONI"
+						href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
 						title="International Training with YMCA"
 						position="Ready to working abroad"
 						date="April 2023"
@@ -587,7 +591,7 @@ function updateHiddenCheckbox() {
             filename: 'Systems Engineer- Ivan Esteban Castillo',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 1 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
         };
 
         // Convierte el contenido a PDF
