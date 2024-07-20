@@ -2,618 +2,978 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import CardCont from "../components/CardCont.astro";
-import DayNight from "../components/CAD/DayNight.astro"
+import DayNight from "../components/CAD/DayNight.astro";
 import { Image } from "astro:assets";
-import pathImageProfil  from "../imgs/castell.jpg"
-import { Icon } from 'astro-icon'
-import IconInstagram from '../components/icons/instagram.astro'
-import IconThreads from '../components/icons/threads.astro'
-import IconFacebook from '../components/icons/facebook.astro'
-import IconLinkedin from '../components/icons/linkedin.astro'
+import pathImageProfil from "../imgs/castell.jpg";
+// import { Icon } from 'astro-icon'
+import IconInstagram from "../components/icons/instagram.astro";
+import IconThreads from "../components/icons/threads.astro";
+import IconFacebook from "../components/icons/facebook.astro";
+import IconLinkedin from "../components/icons/linkedin.astro";
+
+import dataUser from "../dataUser.json";
 ---
-<!-- cambiio -->
+
+<Layout title={dataUser.name} subtitle={dataUser.name}>
+  <!-- <DayNight></DayNight> -->
+  <main class="flex flex-row">
+    <button
+      class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded"
+      onclick="exportToPDF()"
+    >
+      Descargar PDF
+    </button>
+
+    <!-- Primera columna -->
+    <div class="col column1 flex-1">
+      <!-- section experiences -->
+      <div class="container section">
+        <h2
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+        >
+          Experiencias
+        </h2>
+
+        <div class="card-content">
+          <ul role="list" class="link-card-grid">
+            <CardCont
+              href="https://acertemos.com/nosotros/"
+              title="Acertemos Cauca"
+              position="Web Master"
+              date="March 2024"
+              body="Como webmaster, gestioné el sitio de WordPress, resolví problemas de resultados y aseguré la eficiencia en los sorteos diarios."
+            />
+            <CardCont
+              href="https://www.caracaranaturetours.com/"
+              title="Caracara Nature Tours"
+              position="Full Stack Developer"
+              date="January 2023"
+              body="Sitio creado para ofertar tours en Colombia para Caracara Nature Tours. Proyecto full stack con BD, renderización API, interfaz de administración CMS y optimización SEO. Usé Astro, React, Tailwind y Postgres."
+            />
+
+            <CardCont
+              href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
+              title="YMCA Summer Camp, New York, USA"
+              position="Camp Counselor"
+              date="June 18 - Sept 18 2023"
+              body="Counselor en YMCA Summer Camp, mejorando la comunicación, trabajo en equipo y liderazgo, y fortaleciendo la adaptabilidad en un entorno diverso."
+            />
+            <CardCont
+              href="https://www.youtube.com/watch?v=J4_D8nD3biI&list=PLEihHgy4xh46qWDwsEbC1tejoatYG_yvN&index=10&ab_channel=YeappSAS"
+              title="TADHACK 2023"
+              position="Hackathon competitor"
+              date="October 21 2023"
+              body="Gané el segundo lugar global en un hackathon con un generador de sitios web, simplificando la creación de sitios y el despliegue de Git."
+            />
+          </ul>
+        </div>
+      </div>
+
+      <!-- section Software-->
+      <div class="container section">
+        <h2
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+        >
+          Software
+        </h2>
+
+        <div class="card-content">
+          <ul role="list" class="link-card-grid text-left">
+            <!-- Agregar más tecnologías aquí -->
+
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                HTML, CSS, JS:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                WordPress:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                React:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Astro:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Next.js:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row gap-4">
+              <div
+                class="text-right text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Strapi:
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <!-- Rellena el 6to checkbox -->
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda columna -->
+    <div class="col column2 overflow-hidden">
+      <div class="hexagon">
+        <Image
+          src={pathImageProfil}
+          width={300}
+          height={300}
+          alt="Person's Picture"
+        />
+      </div>
+
+      <h1
+        class=""
+        style="font-weight: 600; font-size: 2.5rem; line-height: 3rem;"
+      >
+        IVAN CASTILLO
+      </h1>
+      <div class="italic profession">Desarrollador Fullstack</div>
+      <div class="italic profession">Inglés fluido</div>
+
+      <p class="text-xs pt-5 pb-5" style="line-height:1.2rem">
+        Enfocado en ingeniería y desarrollo, lidero la integración de innovación
+        para mejorar continuamente. Utilizo tecnologías emergentes para
+        optimizar procesos, apoyado por habilidades en inglés avanzado.
+        Comprometido con la salud, el deporte y el humor para superar
+        expectativas y fomentar el aprendizaje continuo.
+      </p>
+      <hr />
+      <!-- Middle col- 2nd  Contacts Info  -->
+      <div class="contacts pt-6 pb-6 uppercase">
+        <!-- <div class="contact-label">Más información</div> -->
+        <h5 class="pt-3" style="font-weight: 600">Fecha de nacimiento:</h5>
+        <p class="text-matte-blue">08/01/199</p>
+        <h5 class="pt-3" style="font-weight: 600">Teléfono:</h5>
+        <p class="text-matte-blue">3202486769</p>
+        <h5 class="pt-3" style="font-weight: 600">Correo electrónico:</h5>
+        <p class="text-matte-blue normal-case">castell@unicauca.edu.co</p>
+        <h5 class="pt-3" style="font-weight: 600">Portafolio:</h5>
+        <a
+          class="text-matte-blue normal-case"
+          href="https://castelll0009.github.io/Portafolio-s-CASTELL/"
+          >¡Haz clic para ver el portafolio!</a
+        >
+        <h5 class="pt-3" style="font-weight: 600">Linkedin:</h5>
+        <a
+          class="text-matte-blue normal-case"
+          href="IVAN ESTEBAN CASTILLO SAMBONI">¡Haz clic para ver!</a
+        >
+        <a href="#"></a>
+        <!-- <h5 class="pt-3 " style="font-weight: 600">Signo del zodíaco:</h5>
+		<p class="normal-case">Capricornio</p> -->
+      </div>
+
+      <hr />
+      <div
+        class="social-icons pt-10 pb-5 flex align-middle"
+        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; "
+      >
+        <span class="social-icon flex flex-col" style="align-items:center;">
+          <!-- <img src="instagram-icon.png" alt="Linkedin" /> -->
+          <IconLinkedin />
+          <a
+            href="https://www.linkedin.com/in/ivan-esteban-castillo-samboni-aa6b952a3/"
+            class="text-xs">/Ivan Esteban Castillo</a
+          >
+        </span>
+
+        <span class="social-icon flex flex-col" style="align-items:center;">
+          <!-- <img src="instagram-icon.png" alt="Facebook" /> -->
+          <IconFacebook />
+          <a
+            href="https://www.facebook.com/profile.php?id=100090270771169&mibextid=JRoKGi"
+            class="text-xs">/Ivan Esteban Castillo</a
+          >
+        </span>
+        <span class="social-icon flex flex-col" style="align-items:center;">
+          <!-- <img src="instagram-icon.png" alt="Instagram" /> -->
+          <IconInstagram />
+          <p class="text-xs">@castelll0009</p>
+        </span>
+        <span class="social-icon flex flex-col" style="align-items:center;">
+          <!-- <img src="instagram-icon.png" alt="Threads" /> -->
+          <IconThreads />
+          <p class="text-xs">@castelll0009</p>
+        </span>
+        <!-- Agregar más redes sociales aquí -->
+      </div>
+    </div>
+
+    <!-- Tercera columna -->
+    <div class="col column3">
+      <div class="container section">
+        <h2
+          class="uppercase mb-2 text-2xl text-center tracking-tight text-silver dark:text-white"
+        >
+          Educacíon
+        </h2>
+        <div class="card-content">
+          <ul role="list" class="link-card-grid">
+            <CardCont
+              href="#"
+              title="Ingeniero de Sistemas"
+              position="Unicauca"
+              date="Septimo Semestre - Actualidad"
+              body="Experiencia en proyectos de software y bases de datos MYSQL en UNICAUCA, enfocado en desarrollo y gestión de equipos."
+            />
+
+            <CardCont
+              href="#"
+              title="Telemática"
+              position="Unicauca - Título Concluido"
+              date="2018 - 2022 Unicauca"
+              body="Graduado en Telemática con 4.5 GPA, experto en redes, programación web/móvil y análisis de datos en la nube."
+            />
+
+            <CardCont
+              href="https://drive.google.com/drive/folders/18bNtcdW3ig1e8ysgI6Qsm-jr41v8HH0M?usp=sharing"
+              title="Certificaciones"
+              position="Haz clic en el título para ver"
+              date="2020 - 2022"
+              body="Certificaciones en Google Cloud Platform, Cisco CCNA, ITIL Ingles Fundamentals, YMCA certificado de trabajo en NY manejo de ingles fluido y 2do lugar en TAD HACK."
+            />
+
+            <CardCont
+              href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
+              title="Entrenamiento Internacional con YMCA"
+              position="Listo para trabajar en el extranjero"
+              date="Abril 2023"
+              body="Entrenamiento integral de inglés con YMCA para trabajo internacional, facilitando procesos de visa y pasaporte."
+            />
+          </ul>
+        </div>
+      </div>
+      <!-- section Skills-->
+      <!-- section Software-->
+      <div class="container section">
+        <h2
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+        >
+          Skills
+        </h2>
+
+        <div class="card-content">
+          <ul role="list" class="link-card-grid text-left">
+            <!-- Agregar más empresas aquí -->
+
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Inglés fluido
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Trabajo en equipo
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Creatividad
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Dedicación
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Experiencia
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+            <div class="flex flex-row-reverse gap-4">
+              <div
+                class="text-left text-xs"
+                style="max-width: 90px; min-width:90px"
+              >
+                Trayectoria Profesional
+              </div>
+              <span>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div
+                  class="custom-checkbox checked"
+                  onclick="toggleCheckbox(this)"
+                >
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)">
+                </div>
+              </span>
+              <input
+                type="checkbox"
+                id="hiddenCheckbox"
+                style="display: none;"
+              />
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
 <style>
-	body {
-		font-family: Arial, sans-serif;
-		background-color: #1f2227;
-		background-color: white;
-		margin: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;		
-	}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1f2227;
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
+  main {
+    width: 21cm;
+    height: max-content;
+    min-height: 29.7cm;
+    max-height: max-content;
+    background-color: #1f2227;
+    padding: 2.6vw;
+    padding: 0.5vw;
+    display: flex;
+  }
+  ul div div {
+    font-size: 14px;
+  }
 
-	main {
-		width: 21cm;
-		height: max-content;
-		min-height: 29.7cm;
-		max-height: max-content;
-		background-color: #1f2227;
-		padding: 2.6vw;
-		padding: 0.5vw;
-		display: flex;
-	}
-	ul div div{
-		font-size: 14px;
-	}
+  /* Estilos para la primera columna */
+  main .col {
+    padding: 20px;
+  }
+  main .column1 {
+    flex: 1;
+    color: white;
+    text-align: right;
+  }
 
-	/* Estilos para la primera columna */
-	main .col {
-		padding: 20px;
-	}
-	main .column1 {
-		flex: 1;
-		color: white;
-		text-align: right;
-	}
+  .experiences {
+    font-weight: bold;
+    color: #e9eef7;
+  }
 
-	.experiences {
-		font-weight: bold;
-		color: #e9eef7;
-	}
+  .company-name {
+    margin-top: 10px;
+    color: #354862;
+  }
 
-	.company-name {
-		margin-top: 10px;
-		color: #354862;
-	}
+  .role {
+    font-style: italic;
+    font-size: smaller;
+    color: #e9eef7;
+  }
 
-	.role {
-		font-style: italic;
-		font-size: smaller;
-		color: #e9eef7;
-	}
+  .date {
+    font-size: x-small;
+    color: #e9eef7;
+  }
 
-	.date {
-		font-size: x-small;
-		color: #e9eef7;
-	}
+  /* Estilos para la segunda columna */
+  .column2 {
+    /* flex: 1; */
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3a48;
+    color: white;
+  }
 
-	/* Estilos para la segunda columna */
-	.column2 {
-		/* flex: 1; */
-		width: 30%;
-		text-align: center;
-		padding: 20px;
-		background-color: #2c3a48;
-		color: white;
-	}
+  .hexagon {
+    background: #fff;
+    width: 120px;
+    height: 135px;
 
-	.hexagon {
-		background: #fff;		
-		width: 120px;
-		height: 135px;
-	
-		clip-path: polygon(
-			50% 0%,
-			100% 25%,
-			100% 75%,
-			50% 100%,
-			0% 75%,
-			0% 25%
-		);
-		margin: 0 auto;
-	}
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin: 0 auto;
+  }
 
-	.name {
-		font-size: larger;
-		margin-top: 10px;
-		color: #e9eef7;
-	}
+  .name {
+    font-size: larger;
+    margin-top: 10px;
+    color: #e9eef7;
+  }
 
-	.profession {
-		font-size: smaller;
-		color: #e9eef7;
-	}
+  .profession {
+    font-size: smaller;
+    color: #e9eef7;
+  }
 
-	.intro {
-		margin-top: 20px;
-		color: #e9eef7;
-	}
+  .intro {
+    margin-top: 20px;
+    color: #e9eef7;
+  }
 
-	hr {
-		border: 1px dashed white;
-	}
+  hr {
+    border: 1px dashed white;
+  }
 
-	/* Estilos para la tercera columna */
-	.column3 {
-		flex: 1;
-		padding: 20px;
-		color: white;
-	}
+  /* Estilos para la tercera columna */
+  .column3 {
+    flex: 1;
+    padding: 20px;
+    color: white;
+  }
 
-	.education {
-		font-weight: bold;
-		color: #e9eef7;
-	}
+  .education {
+    font-weight: bold;
+    color: #e9eef7;
+  }
 
-	.institution-name {
-		margin-top: 10px;
-		color: #354862;
-	}
+  .institution-name {
+    margin-top: 10px;
+    color: #354862;
+  }
 
-	.degree {
-		font-style: italic;
-		font-size: smaller;
-		color: #e9eef7;
-	}
+  .degree {
+    font-style: italic;
+    font-size: smaller;
+    color: #e9eef7;
+  }
 
-	.years {
-		font-size: x-small;
-		color: #e9eef7;
-	}
+  .years {
+    font-size: x-small;
+    color: #e9eef7;
+  }
 
-	.description {
-		font-size: small;
-		color: #e9eef7;
-	}
+  .description {
+    font-size: small;
+    color: #e9eef7;
+  }
 
-	/* Estilos para habilidades */
-	.skills {
-		margin-top: 20px;
-		color: #e9eef7;
-	}
+  /* Estilos para habilidades */
+  .skills {
+    margin-top: 20px;
+    color: #e9eef7;
+  }
 
-	.skill-label {
-		font-weight: bold;
-		color: #e9eef7;
-	}
+  .skill-label {
+    font-weight: bold;
+    color: #e9eef7;
+  }
 
-	.custom-checkbox {
+  .custom-checkbox {
     width: 12px;
     height: 12px;
     border: 1px solid #a3a3a3;
-	border: 1px solid #6597c9;
+    border: 1px solid #6597c9;
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
     background-color: #545a7300;
     cursor: pointer;
-}
+  }
 
-.custom-checkbox.checked {
+  .custom-checkbox.checked {
     background-color: #374d63; /* Change color for checked state */
-	background-color: #6597c9;
-}
+    background-color: #6597c9;
+  }
 
-	
-	/* Estilos para los iconos de redes sociales */
-	.social-icons {
-		/* margin-top: 20px; */
-	}
+  /* Estilos para los iconos de redes sociales */
+  .social-icons {
+    /* margin-top: 20px; */
+  }
 
-	.social-icon {		
-		margin-right: 10px;
-	}
+  .social-icon {
+    margin-right: 10px;
+  }
 
-	.section {
-	}
-	.section h2 {
-		border: none;
-		font-weight: lighter;
-		border-top: 2.9px dotted rgb(117, 117, 117);
-		border-bottom: 2.9px dotted rgb(117, 117, 117);
-	}
-	.col .section{
-		margin-top: 25px;
-	}
+  .section {
+  }
+  .section h2 {
+    border: none;
+    font-weight: lighter;
+    border-top: 2.9px dotted rgb(117, 117, 117);
+    border-bottom: 2.9px dotted rgb(117, 117, 117);
+  }
+  .col .section {
+    margin-top: 25px;
+  }
 </style>
 
-<Layout title="CV- Ivan Esteban Castillo Systems Engineer">
-	<!-- <DayNight></DayNight> -->
-	<main class="flex flex-row">
-		<button class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="exportToPDF()">
-			Descargar PDF
-		  </button>
-		  
-
-		  
-
-		<!-- Primera columna -->
-		<div class="col column1 flex-1">
-			<!-- section experiences -->
-			<div class="container section">
-				<h2 class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
-				>
-					Experiences
-				</h2>
-				
-				<div class="card-content">
-					<ul role="list" class="link-card-grid">
-						<CardCont
-							href="https://acertemos.com/nosotros/"
-							title="Acertemos Cauca"
-							position="Web Master"
-							date="March 2024"
-							body="I worked as a webmaster for Acertemos, a lottery and betting company in Cauca. Responsible for the entire WordPress site, I faced daily challenges such as solving issues with updating results and other related problems. My work ensured efficiency and accuracy in the company's daily draws."
-
-						/>
-						<CardCont
-							href="https://castelll0009.github.io/unknow-aio/"
-							title="Unknown.aio - NFT"
-							position="Frontend (Landing Page)"
-							date="November 2022"
-							body="As a Frontend Developer at Unknown.aio's NFT platform, I crafted an engaging landing page, applied creative design, and gained insights into NFT technology."
-						/>
-						<CardCont
-							href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
-							title="YMCA Summer Camp, New York, USA"
-							position="Camp Counselor"
-							date="June 18 - Sept 18 2023"
-							body="Camp Counselor at YMCA Summer Camp, New York, enhancing communication, teamwork, and leadership. Improved English proficiency in a diverse setting, strengthening adaptability. Valuable skills for a developer in a globalized industry."
-						/>
-						<CardCont
-							href="https://www.youtube.com/watch?v=J4_D8nD3biI&list=PLEihHgy4xh46qWDwsEbC1tejoatYG_yvN&index=10&ab_channel=YeappSAS"
-							title="TADHACK 2023"
-							position="Hackathon competitor"
-							date="October 21 2023"
-							body="Secured global second place in a hackathon with our website generator, streamlining site creation, repository setup, and Git deployment. Earned recognition in the international competition while securing the second spot locally."
-						/>
-					</ul>
-				</div>
-			</div>
-
-			<!-- section Software-->
-			<div class="container section">
-				<h2
-					class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
-				>
-					Software
-				</h2>
-				
-				<div class="card-content">
-					<ul role="list" class="link-card-grid text-left">
-					
-						<!-- Agregar más empresas aquí -->
-						
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">Html,Css,Js:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">WordPress:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked " onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked " onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">React:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked " onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">Astro:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">Nextjs:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						<div class="flex flex-row gap-4">
-							<div class="text-right" style="max-width: 90px; min-width:90px">Strapi:</div>
-							<span>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-								<!-- Fill out the 6th checkbox -->
-								<div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
-							</span>
-							<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-						</div>
-						
-						
-						
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	
-		<!-- Segunda columna -->
-		<div class="col column2 overflow-hidden">
-			<div class="hexagon">
-				<Image src={pathImageProfil} width={300} height={300} alt="Person's Picture"></Image>				
-			</div>
-	
-			<h1 class="" style="font-weight:600; font-size:2.5rem; line-height: 3rem;">IVAN CASTILLO</h1>
-			<div class="italic profession">Fullstack Developer</div>
-			<div class="italic profession">English Speaker</div>
-			<p class="text-xs pt-5 pb-5 " style="line-height:1.2rem">
-						
-		Dedicated to excellence, I lead colleagues in integrating innovation for continuous improvement. Tackling challenges with determination, I leverage emerging technologies for streamlined processes. My commitment to health, sports, and humor complements a passion for exceeding expectations and fostering a culture of continuous learning.
-			</p>
-			<hr />
-			<!-- Middle col- 2nd  Contacts Info  -->
-			<div class="contacts pt-6 pb-6 uppercase">
-				<!-- <div class="contact-label">More Info</div> -->
-				<h5 class="pt-3  " style="font-weight: 600">DOB:</h5>
-				<p class="text-matte-blue">08/01/199</p>
-				<h5 class="pt-3  " style="font-weight: 600">PHONE:</h5>
-				<p class="text-matte-blue">3202486769</p>
-				<h5 class="pt-3  " style="font-weight: 600">EMAIL:</h5>
-				<p class="text-matte-blue normal-case">castell@unicauca.edu.co</p>
-				<h5 class="pt-3  " style="font-weight: 600">Briefcase:</h5>		
-				<a class="text-matte-blue normal-case" href="https://castelll0009.github.io/Portafolio-s-CASTELL/" >Click to see portafolio!</a>						
-				<h5 class="pt-3  " style="font-weight: 600">Linkedin:</h5>
-				<a class="text-matte-blue normal-case" href="IVAN ESTEBAN CASTILLO SAMBONI">Click to see!</a>
-				<a href="#"></a>
-				<!-- <h5 class="pt-3 " style="font-weight: 600">Zodiac sign:</h5>
-				<p class="normal-case">Capricorn</p> -->
-			</div>
-			<hr />
-			<div class="social-icons pt-10 pb-5 flex align-middle" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; ">
-			
-				<span class="social-icon flex flex-col " style="align-items:center;" >
-					<!-- <img src="instagram-icon.png" alt="Linkedin" /> -->
-					<IconLinkedin ></IconLinkedin>
-					<a href="https://www.linkedin.com/in/ivan-esteban-castillo-samboni-aa6b952a3/" class="text-xs">/Ivan Esteban Castillo</a>
-				</span>
-				
-				<span class="social-icon flex flex-col " style="align-items:center;" >
-					<!-- <img src="instagram-icon.png" alt="Facebook" /> -->
-				<IconFacebook></IconFacebook>
-					<a href="https://www.facebook.com/profile.php?id=100090270771169&mibextid=JRoKGi" class="text-xs">/Ivan Esteban Castillo</a>
-				</span>
-				<span class="social-icon flex flex-col " style="align-items:center;" >
-					<!-- <img src="instagram-icon.png" alt="Instagram" /> -->
-					<IconInstagram></IconInstagram>
-					<p class="text-xs">@castelll0009</p>
-				</span>
-				<span class="social-icon flex flex-col " style="align-items:center;" >
-					<!-- <img src="instagram-icon.png" alt="Threads" /> -->
-					<IconThreads></IconThreads>
-					<p class="text-xs">@castelll0009</p>
-				</span>
-				<!-- Agregar más redes sociales aquí -->
-			</div>
-			
-		</div>
-
-		<!-- Tercera columna -->
-		<div class="col column3">
-			<div class="container section">
-				<h2
-					class="uppercase mb-2 text-2xl text-center tracking-tight text-silver dark:text-white"
-				>
-					Education
-				</h2>
-				<div class="card-content">
-					<ul role="list" class="link-card-grid">
-						<CardCont
-							href="#"
-							title="Engineer of Systems"
-							position="Unicauca"
-							date="8th Semester - Current"
-							body="I have had the opportunity to create projects for UNICAUCA, specifically for the FCCEA, an expert in MYSQL databases, and management of work teams for software projects."
-						/>
-						<CardCont
-							href="#"
-							title="Telematics"
-							position="Unicauca - Degree Completed"
-							date="2018 - 2022 Unicauca"
-							body="4.5 GPA, skilled in networks, web/mobile programming, and circuits. Cisco and Google certified, excelling in network solutions and cloud-based data analysis."
-						/>
-						<CardCont
-							href="https://drive.google.com/drive/folders/18bNtcdW3ig1e8ysgI6Qsm-jr41v8HH0M?usp=sharing"
-							title="Certifies"
-							position="click the title above to see"
-							date="2020 - 2022"
-							body="Four certifications: Google Cloud Platform, Cisco CCNA, ITIL Fundamentals to achieve fluent English. TAD HACK certificate (2nd place in local competence)."
-						/>
-						<CardCont
-						href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
-						title="International Training with YMCA"
-						position="Ready to working abroad"
-						date="April 2023"
-						body="Received comprehensive English training with YMCA, enhancing speaking and listening skills for international work. Program aided visa, passport, and contract processes, facilitating preparation for working abroad."
-						/>
-					
-					</ul>
-				</div>
-			</div>
-			<!-- section Skills-->
-		<!-- section Software-->
-		<div class="container section">
-			<h2
-				class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
-			>
-				Skills
-			</h2>
-			
-			<div class="card-content">
-				<ul role="list" class="link-card-grid text-left">
-				
-					<!-- Agregar más empresas aquí -->
-					
-					<div class="flex  flex-row-reverse  gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Fluent English</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>							
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					<div class="flex  flex-row-reverse gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Team Work</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					<div class="flex  flex-row-reverse gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Creativity</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					<div class="flex  flex-row-reverse gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Dedication</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					<div class="flex  flex-row-reverse gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Experience</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					<div class="flex  flex-row-reverse gap-4">
-						<div class="text-left" style="max-width: 90px; min-width:90px">Professional trajectory</div>
-						<span>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-							<div class="custom-checkbox " onclick="toggleCheckbox(this)"></div>
-						</span>
-						<input type="checkbox" id="hiddenCheckbox" style="display: none;">
-					</div>
-					
-					
-					
-					
-				</ul>
-			</div>
-		</div>
-		</div>
-	</main>
-</Layout>
-
-
 <script is:inline>
-	function toggleCheckbox(checkbox) {
-    checkbox.classList.toggle('checked');
+  function toggleCheckbox(checkbox) {
+    checkbox.classList.toggle("checked");
     updateHiddenCheckbox();
-}
+  }
 
-function updateHiddenCheckbox() {
-    const hiddenCheckbox = document.getElementById('hiddenCheckbox');
-    const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+  function updateHiddenCheckbox() {
+    const hiddenCheckbox = document.getElementById("hiddenCheckbox");
+    const customCheckboxes = document.querySelectorAll(".custom-checkbox");
 
     let isChecked = false;
-    customCheckboxes.forEach(checkbox => {
-        if (checkbox.classList.contains('checked')) {
-            isChecked = true;
-        }
+    customCheckboxes.forEach((checkbox) => {
+      if (checkbox.classList.contains("checked")) {
+        isChecked = true;
+      }
     });
 
     hiddenCheckbox.checked = isChecked;
-}
-
+  }
 </script>
 
 <!-- download  like pdf -->
 <script is:inline>
-    async function exportToPDF() {
-        const mainContent = document.querySelector('main');
+  async function exportToPDF() {
+    const mainContent = document.querySelector("main");
 
-        // Espera a que las imágenes se carguen completamente antes de convertir a PDF
-        await waitForImagesToLoad(mainContent);
+    // Espera a que las imágenes se carguen completamente antes de convertir a PDF
+    await waitForImagesToLoad(mainContent);
 
-        // Configuración de html2pdf
-        const pdfOptions = {
-            margin: 0,
-            filename: 'Systems Engineer- Ivan Esteban Castillo',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 1 },
-            jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-        };
+    // Configuración de html2pdf
+    const pdfOptions = {
+      margin: 0,
+      filename: "Systems Engineer - Ivan Esteban Castillo",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: "cm", format: "a4", orientation: "portrait" },
+    };
 
-        // Convierte el contenido a PDF
-        html2pdf().from(mainContent).set(pdfOptions).save();
-    }
+    // Convierte el contenido a PDF
+    html2pdf().from(mainContent).set(pdfOptions).save();
+  }
 
-    async function waitForImagesToLoad(container) {
-        const images = container.querySelectorAll('img');
-        const imageLoadPromises = [];
+  async function waitForImagesToLoad(container) {
+    const images = container.querySelectorAll("img");
+    const imageLoadPromises = [];
 
-        images.forEach((image) => {
-            const imageLoadPromise = new Promise((resolve) => {
-                if (image.complete) {
-                    resolve();
-                } else {
-                    image.onload = resolve;
-                }
-            });
+    images.forEach((image) => {
+      const imageLoadPromise = new Promise((resolve) => {
+        if (image.complete) {
+          resolve();
+        } else {
+          image.onload = resolve;
+        }
+      });
 
-            imageLoadPromises.push(imageLoadPromise);
-        });
+      imageLoadPromises.push(imageLoadPromise);
+    });
 
-        await Promise.all(imageLoadPromises);
-    }
+    await Promise.all(imageLoadPromises);
+  }
 </script>
-
