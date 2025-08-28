@@ -1,21 +1,23 @@
 ---
 interface Props {
 	title: string;
+	subtitle: string;
     position: string;
     date: string ;
 	body: string;
 	href: string;
 }
 
-const { href, title, body, position,date } = Astro.props;
+const { href, title, subtitle, body, position,date } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={href}>
-		<h3 class="text-matte-blue uppercase text-xl  " style="font-weight: 600;">
+		<h3 class="text-matte-blue uppercase text-base  " style="font-weight: 600;">
 			{title}		
         </h3>
-        <h4 class="uppercase text-sm" style="font-weight: 600;">{position}</h4>
+		<p class="text-xs italic">{subtitle}</p>
+        <h4 class="uppercase text-xs" style="font-weight: 400;">{position}</h4>
         <h5 class="text-silver">{date}</h5>
 		<p class="text-xs">
 			{body}
