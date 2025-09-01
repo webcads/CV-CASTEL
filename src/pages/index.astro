@@ -15,8 +15,8 @@ import dataUser from "../dataUser.json";
 ---
 
 <Layout title={dataUser.name} subtitle={dataUser.name}>
-  <!-- <DayNight></DayNight> -->
-  <main class="flex flex-row">
+  <DayNight ></DayNight>
+  <main class="flex flex-row bg-white dark:bg-[#1f2227] dark:text-white text-black border-[1px] border-[#2c3a4875]">
     <button
       class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded"
       onclick="exportToPDF()"
@@ -25,11 +25,11 @@ import dataUser from "../dataUser.json";
     </button>
 
     <!-- Primera columna -->
-    <div class="col column1 flex-1">
+    <div class="col column1 flex-1 ">
       <!-- section experiences -->
       <div class="container section">
         <h2
-          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
         >
           Experiencias
         </h2>
@@ -83,7 +83,7 @@ import dataUser from "../dataUser.json";
       <!-- section Software-->
       <div class="container section">
         <h2
-          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
         >
           Software
         </h2>
@@ -350,7 +350,7 @@ import dataUser from "../dataUser.json";
     </div>
 
     <!-- Segunda columna -->
-    <div class="col column2 overflow-hidden">
+    <div class="col column2 overflow-hidden bg-[#f5efd79d] dark:bg-[#2c3a48] dark:text-white text-gray-600 ">
       <div class="hexagon">
         <Image
           src={pathImageProfil}
@@ -366,9 +366,10 @@ import dataUser from "../dataUser.json";
       >
         IVAN CASTILLO
       </h1>
-      <div class="italic profession">Desarrollador Fullstack</div>
-      <div class="italic profession">Inglés fluido</div>
-
+      <div class="text-[#6597c9]">
+      <div class="italic ">Desarrollador Fullstack</div>
+      <div class="italic ">Inglés fluido</div>
+      </div>
       <p class="text-sm pt-5 pb-5" style="line-height:1.2rem">
         Desarrollador Full Stack con amplia experiencia en la creación de
         aplicaciones web completas y optimizadas. Especializado en React y
@@ -446,7 +447,7 @@ import dataUser from "../dataUser.json";
     <div class="col column3">
       <div class="container section">
         <h2
-          class="uppercase mb-2 text-2xl text-center tracking-tight text-silver dark:text-white"
+          class="uppercase mb-2 text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
         >
           Educacíon
         </h2>
@@ -491,7 +492,7 @@ import dataUser from "../dataUser.json";
       <!-- section Software-->
       <div class="container section">
         <h2
-          class="mb-2 uppercase text-2xl text-center tracking-tight text-silver dark:text-white"
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
         >
           Skills
         </h2>
@@ -679,7 +680,7 @@ import dataUser from "../dataUser.json";
                 class="text-left text-xs"
                 style="max-width: 90px; min-width:90px"
               >
-                Experiencia
+                Experiencia 
               </div>
               <span>
                 <div
@@ -755,9 +756,7 @@ import dataUser from "../dataUser.json";
 
 <style>
   body {
-    font-family: Arial, sans-serif;
-    background-color: #1f2227;
-    background-color: white;
+    font-family: Arial, sans-serif; 
     margin: 0;
     display: flex;
     justify-content: center;
@@ -769,8 +768,7 @@ import dataUser from "../dataUser.json";
     width: 28cm;
     height: max-content;
     min-height: 29.7cm;
-    max-height: max-content;
-    background-color: #1f2227;
+    max-height: max-content;    
     padding: 2.6vw;
     padding: 0.5vw;
     display: flex;
@@ -784,8 +782,7 @@ import dataUser from "../dataUser.json";
     padding: 20px;
   }
   main .column1 {
-    flex: 1;
-    color: white;
+    flex: 1;    
     text-align: right;
   }
 
@@ -816,8 +813,8 @@ import dataUser from "../dataUser.json";
     width: 30%;
     text-align: center;
     padding: 20px;
-    background-color: #2c3a48;
-    color: white;
+    
+    
   }
 
   .hexagon {
@@ -835,10 +832,7 @@ import dataUser from "../dataUser.json";
     color: #e9eef7;
   }
 
-  .profession {
-    font-size: smaller;
-    color: #e9eef7;
-  }
+ 
 
   .intro {
     margin-top: 20px;

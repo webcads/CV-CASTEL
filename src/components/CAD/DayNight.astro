@@ -13,12 +13,16 @@ const isDark = false;
     #themeToggle {
         border: 0;
         background: none;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
     }
     .sun { fill: black; }
     .moon { fill: transparent; }
 
-    :global(.dark) .sun { fill: transparent; }
-    :global(.dark) .moon { fill: white; }
+    .dark .sun { fill: transparent; }
+    .dark .moon { fill: white; }
 </style>
 
 <script is:inline>
