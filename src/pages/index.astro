@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 import CardCont from "../components/CardCont.astro";
 import DayNight from "../components/CAD/DayNight.astro";
 import { Image } from "astro:assets";
@@ -12,8 +13,8 @@ import IconLinkedin from "../components/icons/linkedin.astro";
 import dataUser from "../dataUser.json";
 ---
 
-<Layout title={dataUser.name} subtitle="Analista de Servicios y Controles TI">
-  <DayNight></DayNight>
+<Layout title={dataUser.name} subtitle={dataUser.name}>
+  <DayNight ></DayNight>
   <main class="flex flex-row bg-white dark:bg-[#1f2227] dark:text-white text-black border-[1px] border-[#2c3a4875]">
     <button
       class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded"
@@ -23,10 +24,12 @@ import dataUser from "../dataUser.json";
     </button>
 
     <!-- Primera columna -->
-    <div class="col column1 flex-1">
-      <!-- Experiencias -->
+    <div class="col column1 flex-1 ">
+      <!-- section experiences -->
       <div class="container section">
-        <h2 class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white">
+        <h2
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
+        >
           Experiencias
         </h2>
 
@@ -36,55 +39,59 @@ import dataUser from "../dataUser.json";
               href="https://www.tiendamacshop.com/"
               title="Mac Shop"
               subtitle="Click para ver el sitio web"
-              position="Desarrollador y Soporte Técnico TI"
+              position="E-Commerce Developer"
               date="Abril 2025 - Actual"
-              body="Brindo soporte técnico continuo, administración de plataformas e-commerce, gestión de bases de datos, seguridad informática y resolución de incidencias. Optimización de sistemas, rendimiento y experiencia de usuario para garantizar disponibilidad y eficiencia operativa."
+              body="Desarrollé una tienda online completa con Next.js, Tailwind y Strapi CMS. Implementé pasarelas de pago PayU y Addi, facturación por WhatsApp y carrito avanzado. Optimizaciones de rendimiento y SEO que mejoran la experiencia del usuario, reducen fricción en el checkout y aumentan potencial de conversiones y ventas."
             />
             <CardCont
               href="https://www.caracaranaturetours.com/"
               title="Caracara Nature Tours"
-              subtitle="Click aquí para ver el sitio web"
-              position="Administrador de Plataformas y Soporte TI"
+              subtitle="Click aqui para ver el sitio web"
+              position="Full Stack Developer"
               date="Enero 2023 - Actual"
-              body="Administración completa de plataforma full-stack (Astro + PostgreSQL). Gestión de bases de datos, seguridad de la información, backups, monitoreo de sistemas, soporte técnico a usuarios y optimizaciones de rendimiento y disponibilidad."
+              body="Construí un sitio full-stack para venta de tours con Astro, React, Tailwind y PostgreSQL. Incluí base de datos, CMS de administración, renderización de APIs y fuertes optimizaciones SEO. El resultado es una plataforma que facilita la conversión de visitantes en reservas y mejora el alcance online del negocio."
             />
             <CardCont
               href="https://acertemos.com/nosotros/"
               title="Acertemos Cauca"
-              position="Web Master y Soporte Técnico"
+              position="Web Master"
               date="Marzo 2024"
-              body="Gestión y soporte técnico del sitio WordPress. Resolución de incidencias, optimización de seguridad, rendimiento y estabilidad del sistema para cientos de usuarios diarios."
+              body="Gestioné y optimicé el sitio WordPress, resolví problemas técnicos y aseguré el correcto funcionamiento de sorteos diarios, mejorando la estabilidad y experiencia de cientos de usuarios."
             />
+
             <CardCont
               href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
               title="YMCA Summer Camp, New York, USA"
               position="Camp Counselor"
-              date="Junio - Septiembre 2023"
-              body="Desarrollo de habilidades de comunicación, resolución de problemas y trabajo en equipo en entorno internacional (inglés fluido)."
+              date="Junio 18 - Septiembre 18 2023"
+              body="Desarrollé habilidades de liderazgo, comunicación efectiva y trabajo en equipo en un entorno multicultural e internacional (inglés fluido en contexto real)."
             />
             <CardCont
               href="https://www.youtube.com/watch?v=J4_D8nD3biI&list=PLEihHgy4xh46qWDwsEbC1tejoatYG_yvN&index=10&ab_channel=YeappSAS"
               title="TADHACK 2023"
               subtitle="Click para ver el video"
-              position="Competidor - 2do lugar global"
-              date="Octubre 2023"
-              body="Desarrollo rápido de soluciones tecnológicas funcionales bajo presión, demostrando capacidad de análisis técnico y entrega de resultados."
+              position="Hackathon competitor"
+              date="Octubre 21 2023"
+              body="Ganador del 2do lugar global con un generador de sitios web que simplifica la creación y despliegue en Git, demostrando capacidad para entregar soluciones rápidas y funcionales."
             />
           </ul>
         </div>
       </div>
 
-      <!-- Software y Herramientas -->
+      <!-- section Software-->
       <div class="container section">
-        <h2 class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white">
-          Software y Herramientas
+        <h2
+          class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white"
+        >
+          Software
         </h2>
 
         <div class="card-content">
-          <ul role="list" class="link-card-grid">
+          <ul role="list" class="link-card-grid ">
             <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Soporte Técnico TI:</div>
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">HTML, CSS, JS:</div>
               <span>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
@@ -93,8 +100,20 @@ import dataUser from "../dataUser.json";
               </span>
             </div>
             <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Redes y Bases de Datos:</div>
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">WordPress:</div>
               <span>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
+              </span>
+            </div>
+            <div class="flex flex-row gap-4">
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">React:</div>
+              <span>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
@@ -103,38 +122,36 @@ import dataUser from "../dataUser.json";
               </span>
             </div>
             <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Microsoft 365:</div>
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Astro:</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Power BI - Visualización de Datos:</div>
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Next.js:</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Seguridad Informática:</div>
+              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Strapi:</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-              </span>
-            </div>
-            <div class="flex flex-row gap-4">
-              <div class="text-right text-xs" style="max-width: 90px; min-width:90px">Administración de Plataformas:</div>
-              <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
-                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
           </ul>
@@ -143,7 +160,7 @@ import dataUser from "../dataUser.json";
     </div>
 
     <!-- Segunda columna -->
-    <div class="col column2 overflow-hidden bg-[#f5efd79d] dark:bg-[#2c3a48] dark:text-white text-gray-600">
+    <div class="col column2 overflow-hidden bg-[#f5efd79d] dark:bg-[#2c3a48] dark:text-white text-gray-600 ">
       <div class="hexagon">
         <Image
           src={pathImageProfil}
@@ -153,38 +170,38 @@ import dataUser from "../dataUser.json";
         />
       </div>
 
-      <h1 style="font-weight: 600; font-size: 2.5rem; line-height: 3rem;">
+      <h1
+        class=""
+        style="font-weight: 600; font-size: 2.5rem; line-height: 3rem;"
+      >
         IVAN CASTILLO
       </h1>
       <div class="text-[#6597c9]">
-        <div class="italic">Analista de Servicios y Controles TI</div>
-        <div class="italic">Soporte Técnico · Seguridad Informática · Redes y Plataformas</div>
-        <div class="italic">Inglés C1 • Cali • Disponible inmediatamente</div>
+      <div class="italic ">Full Stack Developer | React · Next.js · E-commerce & Conversion Optimization</div>
+      <div class="italic ">Inglés C1 • Disponible para remoto / USA</div>
       </div>
-
       <p class="text-sm pt-5 pb-5" style="line-height:1.3rem">
-        Profesional en Ingeniería de Sistemas con más de 2 años de experiencia en soporte técnico, administración de plataformas, seguridad informática, gestión de redes y bases de datos. 
-        Especializado en resolución de incidencias, optimización de sistemas, visualización de datos con Power BI y soporte a usuarios en entornos empresariales. 
-        Conocimientos sólidos en sistemas ERP, Microsoft 365 y controles TI. Busco contribuir con mi experiencia para garantizar la disponibilidad, seguridad y eficiencia de los servicios tecnológicos de la organización.
+        Full Stack Developer especializado en construir aplicaciones web y e-commerce que no solo funcionan bien, sino que generan resultados de negocio. 
+        Experto en crear flujos de pago fluidos, optimizar experiencia de usuario, mejorar SEO y rendimiento para aumentar conversiones, ventas y alcance de los clientes. 
+        Combino desarrollo técnico sólido con enfoque en UX/UI y optimización de conversión, entregando soluciones escalables que ayudan a los negocios a vender más y crecer.
       </p>
       <hr />
-
-      <!-- Información de contacto -->
+      <!-- Middle col- 2nd  Contacts Info  -->
       <div class="contacts pt-6 pb-6 uppercase">
         <h5 class="pt-3" style="font-weight: 600">Fecha de nacimiento:</h5>
         <p class="text-matte-blue">08/01/1997</p>
         <h5 class="pt-3" style="font-weight: 600">Teléfono:</h5>
-        <p class="text-matte-blue">321 746 0280</p>
+        <p class="text-matte-blue">3217460280</p>
         <h5 class="pt-3" style="font-weight: 600">Correo electrónico:</h5>
         <p class="text-matte-blue normal-case">castell@unicauca.edu.co</p>
-        <h5 class="pt-3" style="font-weight: 600">Portafolio y Proyectos:</h5>
-        <a class="text-matte-blue normal-case" href="https://castelll.vercel.app/">Haz clic para ver mi portafolio</a>
-        <h5 class="pt-3" style="font-weight: 600">LinkedIn:</h5>
-        <a class="text-matte-blue normal-case" href="https://www.linkedin.com/in/ivan-esteban-castillo-731525381/">Haz clic para ver mi perfil</a>
+        <h5 class="pt-3" style="font-weight: 600">Portafolio & Proyectos recientes:</h5>
+        <a class="text-matte-blue normal-case" href="https://castelll.vercel.app/">¡Haz clic para ver el portafolio!</a>
+        <h5 class="pt-3" style="font-weight: 600">Linkedin:</h5>
+        <a class="text-matte-blue normal-case" href="https://www.linkedin.com/in/ivan-esteban-castillo-731525381/">¡Haz clic para ver!</a>
       </div>
 
       <hr />
-      <div class="social-icons pt-10 pb-5" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <div class="social-icons pt-10 pb-5 flex align-middle" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
         <span class="social-icon flex flex-col" style="align-items:center;">
           <IconLinkedin />
           <a href="https://www.linkedin.com/in/ivan-esteban-castillo-samboni-aa6b952a3/" class="text-xs">/Ivan Esteban Castillo</a>
@@ -206,7 +223,6 @@ import dataUser from "../dataUser.json";
 
     <!-- Tercera columna -->
     <div class="col column3">
-      <!-- Educación -->
       <div class="container section">
         <h2 class="uppercase mb-2 text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white">Educación</h2>
         <div class="card-content">
@@ -214,90 +230,104 @@ import dataUser from "../dataUser.json";
             <CardCont
               href="#"
               title="Ingeniero de Sistemas"
-              position="Universidad del Cauca"
-              date="Actualidad (5to Semestre)"
-              body="Formación sólida en desarrollo de software, bases de datos, redes, seguridad informática y gestión de sistemas."
+              position="Unicauca"
+              date="5to Semestre - Actualidad"
+              body="Experiencia en proyectos de software y bases de datos MySQL, enfocado en desarrollo y gestión de equipos."
             />
+
             <CardCont
               href="#"
               title="Telemática"
-              position="Universidad del Cauca - Graduado"
+              position="Unicauca - Graduado"
               date="2018 - 2022"
-              body="Graduado con GPA 4.5. Especializado en redes, programación web, análisis de datos y sistemas en la nube."
+              body="Graduado con GPA 4.5, experto en redes, programación web/móvil y análisis de datos en la nube."
             />
+
             <CardCont
               href="https://drive.google.com/drive/folders/18bNtcdW3ig1e8ysgI6Qsm-jr41v8HH0M?usp=sharing"
               title="Certificaciones"
               subtitle="Click para ver las certificaciones"
               position=""
-              date="2020 - Actual"
-              body="Google Cloud Platform, Cisco CCNA, ITIL, Inglés avanzado y experiencia en desarrollo rápido de soluciones técnicas."
+              date="2020 - 2022"
+              body="Google Cloud Platform, Cisco CCNA, ITIL, Inglés (YMCA), y 2do lugar en TADHACK 2023."
             />
+
             <CardCont
               href="https://www.tiktok.com/@castelll0009/video/7209884936554188037"
-              title="Entrenamiento Internacional YMCA"
-              position="Inglés para entorno laboral"
+              title="Entrenamiento Internacional con YMCA"
+              position="Listo para trabajar en el extranjero"
               date="Abril 2023"
-              body="Entrenamiento intensivo de inglés para trabajo en entornos internacionales y multiculturales."
+              body="Entrenamiento integral de inglés para trabajo internacional, facilitando procesos de visa y pasaporte."
             />
           </ul>
         </div>
       </div>
 
-      <!-- Skills -->
+      <!-- section Skills-->
       <div class="container section">
         <h2 class="mb-2 uppercase text-2xl text-center tracking-tight text-[#2c3a48] dark:text-white">Skills</h2>
 
         <div class="card-content text-gray-900 dark:text-white">
-          <ul role="list" class="link-card-grid">
+          <ul role="list" class="link-card-grid ">
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Soporte Técnico y Resolución de Incidencias</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">Inglés fluido</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Seguridad Informática</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">Optimización de Conversiones</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Redes y Administración de Plataformas</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">E-commerce & Pagos</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Microsoft 365 y Power BI</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">SEO & Performance</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Bases de Datos (PostgreSQL / MySQL)</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">Trabajo en equipo</div>
               <span>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
+                <div class="custom-checkbox" onclick="toggleCheckbox(this)"></div>
               </span>
             </div>
             <div class="flex flex-row-reverse gap-4">
-              <div class="text-xs" style="max-width: 90px; min-width:90px">Inglés C1</div>
+              <div class="text-xs" style="max-width: 90px; min-width:90px">Creatividad & Dedicación</div>
               <span>
+                <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
                 <div class="custom-checkbox checked" onclick="toggleCheckbox(this)"></div>
@@ -313,6 +343,7 @@ import dataUser from "../dataUser.json";
 </Layout>
 
 <style>
+  /* Tu estilo original queda exactamente igual, no lo toqué */
   body {
     font-family: Arial, sans-serif; 
     margin: 0;
@@ -379,6 +410,17 @@ import dataUser from "../dataUser.json";
 <script is:inline>
   function toggleCheckbox(checkbox) {
     checkbox.classList.toggle("checked");
+    updateHiddenCheckbox();
+  }
+
+  function updateHiddenCheckbox() {
+    const hiddenCheckbox = document.getElementById("hiddenCheckbox");
+    const customCheckboxes = document.querySelectorAll(".custom-checkbox");
+    let isChecked = false;
+    customCheckboxes.forEach((checkbox) => {
+      if (checkbox.classList.contains("checked")) isChecked = true;
+    });
+    hiddenCheckbox.checked = isChecked;
   }
 </script>
 
@@ -389,7 +431,7 @@ import dataUser from "../dataUser.json";
 
     const pdfOptions = {
       margin: 0,
-      filename: "Ivan Castillo - Analista de Servicios y Controles TI.pdf",
+      filename: "Ivan Castillo - Full Stack Developer.pdf",
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: { scale: 1 },
       jsPDF: { unit: "cm", format: "a4", orientation: "portrait" },
